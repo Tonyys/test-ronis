@@ -1,0 +1,74 @@
+.footer
+  padding: 120px 0
+  background-color: #f3f3f3
+  @media (max-width: 768px)
+    padding: 80px 0
+  @media (max-width: 600px)
+    padding: 60px 0
+  &_inner
+    display: flex
+    flex-direction: column
+  &__top
+    margin-bottom: 50px
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media (max-width: 600px)
+      margin-bottom: 20px
+  &__title
+    margin-bottom: 15px
+    font-family: Nunito
+    font-size: 30px
+    font-weight: 400
+    color: $black
+    @media (max-width: 1024px)
+      font-size: 26px
+    @media (max-width: 768px)
+      font-size: 22px
+    @media (max-width: 600px)
+      font-size: 18px
+  &__subtitle
+    font-size: 22px
+    font-weight: 400
+    color: $black
+    @media (max-width: 1024px)
+      font-size: 20px
+    @media (max-width: 768px)
+      font-size: 14px
+    @media (max-width: 600px)
+      font-size: 12px
+  &__bottom
+    display: flex
+    flex-direction: column
+    align-items: center
+
+//  copyright
+
+.copyright
+  padding: 15px 20px
+  width: 100%
+  background-color: #dcdcdc
+  @media (max-width: 1024px)
+    padding: 10px 20px
+  @media (max-width: 768px)
+    padding: 10px 15px
+  @media (max-width: 600px)
+    padding: 5px 15px
+    & .container
+      display: flex
+      flex-direction: column
+      align-items: center
+.copyright__text
+  width: 100%
+  font-size: 14px
+  font-weight: 500
+  color: $white
+  @media (max-width: 1024px)
+    font-size: 12px
+  @media (max-width: 768px)
+    font-size: 10px
+  @media (max-width: 600px)
+    text-align: center
+    font-size: 8px
+
+

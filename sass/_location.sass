@@ -1,0 +1,110 @@
+.location
+  padding-top: 80px
+  @media (max-width: 768px)
+    padding-top: 60px
+  @media (max-width: 600px)
+    padding-top: 40px
+  &__inner
+    display: flex
+    flex-direction: column
+  &__top
+    margin-bottom: 70px
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media (max-width: 768px)
+      margin-bottom: 50px
+    @media (max-width: 600px)
+      margin-bottom: 30px
+  &__title
+    margin-bottom: 20px
+    font-family: Nunito
+    font-size: 30px
+    font-weight: 400
+    color: $black
+    @media (max-width: 1024px)
+      font-size: 26px
+    @media (max-width: 768px)
+      font-size: 22px
+    @media (max-width: 600px)
+      font-size: 18px
+  &__subtitle
+    font-size: 18px
+    font-weight: 300
+    letter-spacing: 1px
+    line-height: 1.5
+    color: $black
+    @media (max-width: 768px)
+      font-size: 14px
+    @media (max-width: 600px)
+      font-size: 12px
+  &__bottom
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    @media (max-width: 600px)
+      justify-content: space-around
+  &__item
+    width: 18%
+    margin-right: 20px
+    margin-bottom: 50px
+    display: flex
+    flex-direction: column
+    align-items: start
+    @media (max-width: 768px)
+      width: 25%
+    @media (max-width: 600px)
+      align-items: center
+      width: 45%
+    @media (max-width: 320px)
+      margin-right: 0
+      width: 100%
+  &__name
+    margin-bottom: 10px
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.5
+    color: $black
+    @media (max-width: 768px)
+      margin-bottom: 5px
+      font-size: 14px
+  &__info
+    margin-bottom: 18px
+    display: flex
+    flex-direction: column
+    @media (max-width: 768px)
+      margin-bottom: 10px
+  &__text
+    font-size: 18px
+    font-weight: 300
+    color: $black
+    &:not(:last-child)
+      margin-bottom: 10px
+    @media (max-width: 1024px)
+      font-size: 16px
+    @media (max-width: 768px)
+      margin-bottom: 3px
+      font-size: 12px
+  &__link
+    font-size: 15px
+    font-weight: 300
+    color: $green
+    position: relative
+    &:after
+      content: ''
+      width: 100%
+      height: 2px
+      position: absolute
+      left: 0
+      bottom: -3px
+      background-color: $green
+      transform: scaleX(0)
+      transition-duration: .4s
+      transform-origin: left
+    &:hover
+      &:after
+        transform: scaleX(1)
+    @media (max-width: 768px)
+      font-size: 10px
+
+

@@ -1,0 +1,75 @@
+.contact
+  padding: 20px 0 80px 0
+  @media (max-width: 768px)
+    padding: 30px 0 60px 0
+  @media (max-width: 600px)
+    padding: 20px 0 40px 0
+  &__inner
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__top
+    margin-bottom: 45px
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media (max-width: 768px)
+      margin-bottom: 30px
+  &__title
+    margin-bottom: 15px
+    font-family: Nunito
+    font-size: 30px
+    font-weight: 400
+    color: $black
+    @media (max-width: 1024px)
+      font-size: 26px
+    @media (max-width: 768px)
+      font-size: 22px
+    @media (max-width: 600px)
+      font-size: 18px
+  &__subtitle
+    font-size: 18px
+    font-weight: 300
+    letter-spacing: 1px
+    color: $black
+    @media (max-width: 768px)
+      font-size: 14px
+    @media (max-width: 600px)
+      font-size: 12px
+  &__bottom
+    max-width: 350px
+    width: 100%
+    display: flex
+    justify-content: space-between
+  &__email
+    margin-right: 30px
+    font-size: 18px
+    font-weight: 300
+    color: $green
+    position: relative
+    &:after
+      content: ''
+      width: 100%
+      height: 2px
+      position: absolute
+      left: 0
+      bottom: -3px
+      background-color: $green
+      transform: scaleX(0)
+      transition-duration: .4s
+      transform-origin: left
+    &:hover
+      &:after
+        transform: scaleX(1)
+    @media (max-width: 768px)
+      font-size: 14px
+    @media (max-width: 600px)
+      font-size: 12px
+  &__number
+    font-size: 18px
+    font-weight: 300
+    color: $black
+    @media (max-width: 768px)
+      font-size: 14px
+    @media (max-width: 600px)
+      font-size: 12px
