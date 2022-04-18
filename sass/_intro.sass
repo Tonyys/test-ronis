@@ -2,7 +2,7 @@
   width: 100%
   height: 100vh
   position: relative
-  z-index: 1
+  z-index: 1000
   overflow: hidden
   &__bg
     width: 100%
@@ -10,7 +10,7 @@
     z-index: -10
     pointer-events: none
   &__bg-slide-container
-    position: relative
+    position: absolute
     width: 100%
     height: 100vh
     overflow: hidden
@@ -23,52 +23,55 @@
       left: 0
       background-color: rgba(0,0,0,.25)
       backdrop-filter: blur(7px)
-  &__pagination
-    margin-right: 30px
-    max-width: 20px
-    width: 100%
-    height: 100%
-    display: flex
-    flex-direction: column
-    align-items: center
-    top: calc(50% - 80px)
-    bottom: 50% !important
-    right: 0
-    left: auto !important
-    @media (max-width: 768px)
-      margin-right: 0
-    @media (max-width: 600px)
-      max-width: 10px
-      margin-right: -5px
-  .swiper-pagination-bullet
-    width: 10px
-    height: 10px
-    margin-bottom: 15px !important
-    background-color: #dcdcdc
-    opacity: 1
-    transition-duration: .4s
-    @media (max-width: 600px)
-      width: 5px
-      height: 5px
-  .swiper-pagination-bullet-active
-    width: 15px
-    height: 15px
-    margin-bottom: 20px !important
-    @media (max-width: 600px)
-      width: 8px
-      height: 8px
-      margin-bottom: 15px !important
-  &__img
-    width: 100%
-    height: 100%
-    object-fit: cover
-    will-change: transform
   &__inner
     height: 100vh
     display: flex
     justify-content: space-between
     position: relative
     z-index: 1
+  &__nav
+    max-width: 20px
+    width: 100%
+    margin: auto 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    top: calc(50% - 68px)
+    right: 5%
+    position: fixed
+    z-index: 1
+    @media (max-width: 768px)
+      margin-right: 0
+    @media (max-width: 600px)
+      max-width: 10px
+      margin-right: -5px
+    &.active
+      .intro__nav-item
+        background-color: #000
+  &__nav-item
+    width: 10px
+    height: 10px
+    background-color: #dcdcdc
+    border-radius: 50%
+    cursor: pointer
+    transform: scale(1)
+    transition-duration: .4s
+    &:not(:last-child)
+      margin-bottom: 15px
+    &.active
+      transform: scale(1.5)
+      margin-bottom: 20px
+    @media (max-width: 768px)
+      width: 8px
+      height: 8px
+    @media (max-width: 600px)
+      width: 6px
+      height: 6px
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    will-change: transform
   &__content
     display: flex
     flex-direction: column
@@ -84,7 +87,7 @@
     @media (max-width: 768px)
       max-width: 375px
     @media (max-width: 600px)
-      max-width: 242px
+      max-width: 240px
     &:after
       content: ''
       width: 120%
@@ -120,6 +123,7 @@
     @media (max-width: 768px)
       font-size: 14px
     @media (max-width: 600px)
+      margin-bottom: 30px
       font-size: 12px
     &:after
       content: ''

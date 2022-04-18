@@ -1,18 +1,3 @@
-// swiper intro
-const swiperBg = new Swiper('.intro__bg', {
-	loop: true,
-	parallax: true,
-	autoplay: {
-		delay: 4000,
-	},
-	speed: 1500,
-
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true,
-	},
-});
-
 // swiper range
 const swiperRange = new Swiper('.range__swiper', {
 	loop: true,
@@ -32,6 +17,66 @@ const swiperRange = new Swiper('.range__swiper', {
 		prevEl: '.range__prev',
 	},
 });
+
+// Nav scrollbar
+
+
+const btnItems = document.querySelectorAll('.intro__nav-item')
+
+
+btnItems.forEach(function (item) {
+	let currentItem = item
+	let itemAttr = currentItem.getAttribute("data-scroll")
+	let currentSection = document.querySelector(itemAttr)
+
+	window.addEventListener('scroll',function (){
+		btnItems.forEach(function (item){
+			// let currentItem = item
+			// let itemAttr = currentItem.getAttribute("data-scroll")
+			// let currentSection = document.querySelector(itemAttr)
+
+			if(window.scrollY >= currentSection.offsetTop - 70){
+				btnItems.forEach(function (item){
+					item.classList.remove('active')
+				})
+				currentItem.classList.add('active')
+			} else {
+				currentItem.classList.remove('active')
+			}
+		})
+	})
+
+	item.addEventListener('click',function (e) {
+
+		btnItems.forEach(function (item){
+			item.classList.remove('active')
+		})
+
+		currentItem.classList.add('active')
+		scrollTo(currentSection)
+	})
+})
+function scrollTo(element) {
+	window.scroll({
+		left: 0,
+		top: element.offsetTop,
+		behavior: 'smooth'
+	})
+}
+
+// change nav
+
+const intro = document.querySelector('.intro')
+const inrNav = document.querySelector('.intro__nav')
+
+window.addEventListener('scroll',function (){
+	if(window.scrollY >= intro.scrollHeight - 300){
+		inrNav.classList.add('active')
+	} else {
+		inrNav.classList.remove('active')
+	}
+})
+
 
 // validate
 
