@@ -20,6 +20,12 @@
     max-width: 340px
     width: 100%
     position: relative
+    @media (max-width: 1024px)
+      max-width: 290px
+    @media (max-width: 768px)
+      max-width: 220px
+    @media (max-width: 600px)
+      max-width: 180px
     &.is-invalid
       .form__cross
         display: block
@@ -30,22 +36,19 @@
         display: block
   &__input
     width: 100%
-    padding: 12px 40px 12px 30px
+    padding: 12px 55px 12px 30px
     font-size: 18px
     color: $gray
     border-radius: 22px
     outline: none
     border: none
     @media (max-width: 1024px)
-      max-width: 290px
-      padding: 12px 40px 12px 30px
+      padding: 12px 55px 12px 30px
     @media (max-width: 768px)
-      max-width: 220px
       font-size: 16px
-      padding: 6px 30px 6px 20px
+      padding: 6px 45px 6px 20px
     @media (max-width: 600px)
-      padding: 6px 20px
-      max-width: 180px
+      padding: 6px 45px 6px 20px
       font-size: 10px
   &__btn
     max-width: 165px
@@ -71,21 +74,20 @@
       max-width: 75px
       font-size: 10px
       padding: 6px 10px
-  &__cross
-    display: none
-    width: 14px
-    height: 14px
-    position: absolute
-    top: 16px
-    right: 35px
-    @media (max-width: 768px)
-      top: 10px
+  &__cross,
   &__done
     display: none
     width: 14px
     height: 14px
     position: absolute
-    top: 16px
+    top: calc(50% - 7px)
     right: 35px
     @media (max-width: 768px)
-      top: 10px
+      width: 12px
+      height: 12px
+      top: calc(50% - 6px)
+      right: 28px
+    @media (max-width: 600px)
+      width: 10px
+      height: 10px
+      top: calc(50% - 6px)
