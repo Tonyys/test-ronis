@@ -1,18 +1,14 @@
 .intro
   width: 100%
   height: 100vh
+  min-height: 500px
   position: relative
   z-index: 1000
   overflow: hidden
-  &__bg
-    width: 100%
-    position: absolute !important
-    z-index: -10
-    pointer-events: none
   &__bg-slide-container
     position: absolute
     width: 100%
-    height: 100vh
+    height: 100%
     overflow: hidden
     &:after
       content: ''
@@ -24,6 +20,7 @@
       background-color: rgba(0,0,0,.25)
       backdrop-filter: blur(7px)
   &__inner
+    padding-top: 100px
     height: 100vh
     display: flex
     justify-content: space-between
@@ -32,11 +29,11 @@
   &__nav
     max-width: 20px
     width: 100%
-    margin: auto 0
+    margin: auto 50px
     display: flex
     flex-direction: column
     align-items: center
-    top: calc(50% - 68px)
+    top: calc(50% - 80px)
     right: 5%
     position: fixed
     z-index: 1
@@ -49,15 +46,15 @@
       .intro__nav-item
         background-color: #000
   &__nav-item
-    width: 10px
-    height: 10px
+    width: 8px
+    height: 8px
     background-color: #dcdcdc
     border-radius: 50%
     cursor: pointer
     transform: scale(1)
     transition-duration: .4s
     &:not(:last-child)
-      margin-bottom: 15px
+      margin-bottom: 17px
     &.active
       transform: scale(1.5)
       margin-bottom: 20px
@@ -77,7 +74,8 @@
     flex-direction: column
     align-items: center
     margin: auto
-    max-width: 600px
+    max-width: 615px
+    min-height: 300px
     height: auto
     overflow: visible
     z-index: 1
@@ -99,7 +97,7 @@
       filter: blur(10px)
       pointer-events: none
   &__title
-    margin-bottom: 30px
+    margin-bottom: 15px
     font-family: Nunito
     font-size: 60px
     font-weight: 400
@@ -115,6 +113,7 @@
     font-size: 20px
     font-weight: 400
     line-height: 1.5
+    letter-spacing: .6px
     text-align: center
     color: $white
     position: relative

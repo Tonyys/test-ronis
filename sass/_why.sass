@@ -1,5 +1,5 @@
 .why
-  padding: 80px 0 40px 0
+  padding: 70px 0 40px 0
   background-color: #eaeaea
   @media (max-width: 768px)
     padding: 60px 0 40px 0
@@ -9,12 +9,11 @@
     display: flex
     flex-direction: column
   &__top
-    margin-bottom: 20px
     display: flex
     flex-direction: column
     align-items: center
   &__title
-    margin-bottom: 20px
+    margin-bottom: 11px
     font-family: Nunito
     font-size: 30px
     font-weight: 400
@@ -28,7 +27,6 @@
   &__subtitle
     font-size: 18px
     font-weight: 300
-    letter-spacing: 1px
     color: $black
     @media (max-width: 768px)
       font-size: 14px
@@ -36,6 +34,7 @@
       font-size: 12px
       text-align: center
   &__bottom
+    padding: 0 60px
     display: flex
     justify-content: space-between
     position: relative
@@ -43,12 +42,11 @@
       flex-direction: column-reverse
   &__photo-container
     margin: 0 auto
-    max-width: 911px
+    max-width: 826px
     width: 100%
-    height: 100%
     position: absolute
-    top: 0
-    left: calc(50% - 430px)
+    top: -21px
+    left: calc(50% - 382px)
     -webkit-box-shadow: 0px 25px 50px 0px #EDEDED
     box-shadow: 0px 25px 50px 0px #EDEDED
     &:after
@@ -73,9 +71,11 @@
     width: 100%
     height: 100%
   &__item-container
+    margin-top: 2px
     width: 100%
     display: flex
     justify-content: space-between
+    align-items: center
     @media (max-width: 1024px)
       justify-content: space-around
     @media (max-width: 768px)
@@ -89,10 +89,10 @@
     position: relative
     z-index: 2
   &__item
-    max-width: 240px
+    max-width: 230px
     width: 100%
-    padding: 15px
-    margin-bottom: 10px
+    padding: 14px
+    margin-bottom: 7px
     display: flex
     flex-direction: column
     background-color: #fff
@@ -104,7 +104,7 @@
       max-width: 300px
       text-align: center
   &__item-header
-    margin-bottom: 8px
+    margin-bottom: 3px
     font-size: 16px
     font-weight: 500
     color: $black
@@ -114,10 +114,10 @@
     @media (max-width: 600px)
       font-size: 12px
   &__item-text
-    font-size: 16px
+    font-size: 15px
     font-weight: 300
     color: $black
-    line-height: 1.5
+    line-height: 1.4
     @media (max-width: 768px)
       font-size: 12px
     @media (max-width: 600px)
@@ -126,8 +126,8 @@
   &__line-first
     position: absolute
     top: 50%
-    right: -95px
-    width: 95px
+    right: -83px
+    width: 83px
     height: 2px
     background-color: #fff
     @media (max-width: 1330px)
@@ -137,7 +137,7 @@
       display: none
   &__line-second
     width: 2px
-    height: 145px
+    height: 116px
     position: absolute
     top: 0
     right: 0
@@ -152,9 +152,9 @@
     left: calc(50% - 12px)
   .why__column:nth-child(1) .why__item:nth-child(2)
     .why__line-first
-      width: 120px
-      right: -120px
-      top: 70%
+      width: 98px
+      right: -98px
+      top: 72%
       @media (max-width: 1330px)
         width: 100px
         right: -100px
@@ -163,9 +163,9 @@
       height: 0
   .why__column:nth-child(1) .why__item:nth-child(3)
     .why__line-first
-      width: 130px
-      right: -130px
-      top: 20%
+      width: 110px
+      right: -110px
+      top: 27%
       @media (max-width: 1330px)
         width: 110px
         right: -110px
@@ -175,49 +175,51 @@
       height: 0
   .why__column:nth-child(1) .why__item:nth-child(4)
     .why__line-first
-      width: 270px
-      right: -270px
-      top: 20%
+      width: 233px
+      right: -233px
+      top: 54%
       @media (max-width: 1330px)
         width: 250px
         right: -250px
     .why__line-second
-      height: 35px
-      top: -35px
+      height: 60px
+      top: -60px
       transform: rotate(180deg)
   //    second column
   .why__column:nth-child(2) .why__item
     .why__line-first
-      width: 380px
+      width: 327px
       right: auto
-      left: -380px
+      left: -327px
+      top: 48%
       @media (max-width: 1330px)
         width: 310px
         left: -310px
     .why__line-second
-      height: 170px
+      height: 106px
       top: 0
       left: 0
       right: auto
   .why__column:nth-child(2) .why__item:nth-child(2)
     .why__line-first
-      width: 320px
+      width: 274px
       right: auto
-      left: -320px
+      left: -274px
+      top: 40%
       @media (max-width: 1330px)
         width: 260px
         left: -260px
     .why__line-second
-      height: 140px
+      height: 100px
       top: 0
       left: 0
       right: auto
   .why__column:nth-child(2) .why__item:nth-child(3)
     .why__line-first
-      width: 130px
+      width: 97px
       right: auto
-      left: -130px
-      top: 60%
+      left: -97px
+      top: 33%
       @media (max-width: 1330px)
         width: 80px
         left: -80px
@@ -229,27 +231,27 @@
       right: auto
   .why__column:nth-child(2) .why__item:nth-child(4)
     .why__line-first
-      width: 230px
+      width: 182px
       right: auto
-      left: -230px
-      top: 60%
+      left: -182px
+      top: 44%
       @media (max-width: 1330px)
         width: 170px
         left: -170px
         top: 50%
     .why__line-second
-      height: 50px
+      height: 55px
       width: 2px
-      top: -50px
+      top: -55px
       left: 0
       right: auto
       transform: rotate(180deg)
   .why__column:nth-child(2) .why__item:nth-child(5)
     .why__line-first
-      width: 420px
+      width: 354px
       right: auto
-      left: -420px
-      top: 50%
+      left: -354px
+      top: 24%
       @media (max-width: 1330px)
         width: 380px
         left: -380px
