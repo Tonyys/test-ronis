@@ -45,31 +45,26 @@ let count = 0
 
 document.querySelectorAll('.form__btn').forEach(function (item,index){
 	item.addEventListener('click' , function(e){
-			e.preventDefault()
+		e.preventDefault()
 
-			errEmail.forEach(function (item){
-				item.classList.remove('is-valid')
-				item.classList.remove('is-invalid')
-			})
+		errEmail.forEach(function (item){
+			item.classList.remove('is-valid')
+			item.classList.remove('is-invalid')
+		})
 
-			if(!isEmail (regEmail, inpEmail[index].value) || inpEmail[index].value.length <= 3) {
-				notValid(errEmail[index])
-				count--
-			} else {
-				valid(errEmail[index])
-				count++
-			}
+		if(!isEmail (regEmail, inpEmail[index].value) || inpEmail[index].value.length <= 3) {
+			notValid(errEmail[index])
+			count--
+		} else {
+			valid(errEmail[index])
+			count++
+		}
 
-			if(count < 1) {
-				count = 0
-			}
+		count = 0
 
-			if(count === 0) {
-				count = 0
-			}
-			inpEmail.forEach(function (item){
-				item.value = ''
-			})
+		inpEmail.forEach(function (item){
+			item.value = ''
+		})
 	})
 })
 
