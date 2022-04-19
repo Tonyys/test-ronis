@@ -29,22 +29,25 @@
   &__nav
     max-width: 20px
     width: 100%
-    margin: auto 50px
+    margin: auto 59px
     display: flex
     flex-direction: column
     align-items: center
-    top: calc(50% - 80px)
+    top: calc(50% - 32px)
     right: 5%
     position: fixed
     z-index: 1
-    @media (max-width: 768px)
+    @include tabletL
+      margin: auto -20px
+      top: calc(50% - 50px)
+    @include tablet
       margin-right: 0
-    @media (max-width: 600px)
+      top: calc(50% - 70px)
+    @include mobile
       max-width: 10px
       margin-right: 5px
-    &.active
-      .intro__nav-item
-        background-color: #000
+    @include min-mobile
+    display: none
   &__nav-item
     width: 8px
     height: 8px
@@ -57,13 +60,10 @@
       margin-bottom: 17px
     &.active
       transform: scale(1.5)
-      margin-bottom: 20px
-    @media (max-width: 768px)
+      margin-bottom: 22px
+    @include tablet
       width: 8px
       height: 8px
-    @media (max-width: 600px)
-      width: 6px
-      height: 6px
   &__img
     width: 100%
     height: 100%
@@ -74,18 +74,16 @@
     flex-direction: column
     align-items: center
     margin: auto
-    max-width: 615px
+    max-width: 585px
     min-height: 300px
     height: auto
     overflow: visible
     z-index: 1
     position: relative
-    @media (max-width: 1024px)
+    @include tabletL
       max-width: 530px
-    @media (max-width: 768px)
-      max-width: 375px
-    @media (max-width: 600px)
-      max-width: 240px
+    @include tablet
+      max-width: 475px
     &:after
       content: ''
       width: 120%
@@ -98,44 +96,44 @@
       pointer-events: none
   &__title
     margin-bottom: 15px
-    font-family: Nunito
+    font-family: Nunito, sans-serif
     font-size: 60px
     font-weight: 400
     color: $white
-    @media (max-width: 1024px)
+    @include tabletL
       font-size: 54px
-    @media (max-width: 768px)
+    @include tablet
+      font-size: 50px
+    @include min-mobile
       font-size: 40px
-    @media (max-width: 600px)
-      font-size: 30px
   &__subtitle
-    margin-bottom: 50px
+    margin-bottom: 54px
     font-size: 20px
     font-weight: 400
-    line-height: 1.5
-    letter-spacing: .6px
+    line-height: 1.4
+    letter-spacing: -0.1px
     text-align: center
     color: $white
     position: relative
-    @media (max-width: 1024px)
+    @include tabletL
       font-size: 18px
-    @media (max-width: 768px)
-      font-size: 14px
-    @media (max-width: 600px)
+    @include tablet
+      font-size: 16px
+    @include mobile
       margin-bottom: 30px
-      font-size: 12px
+    @include min-mobile
+      font-size: 14px
     &:after
       content: ''
       width: 100%
       height: 100%
-      background-image: url(../img/subtitle-bg.png)
+      background-image: url(../../img/subtitle-bg.png)
       background-size: cover
       background-repeat: no-repeat
       position: absolute
       top: -2px
       left: 0
       z-index: -1
-      @media (max-width: 768px)
-        top: 0
-      @media (max-width: 600px)
+      @include tablet
         display: none
+        top: 0

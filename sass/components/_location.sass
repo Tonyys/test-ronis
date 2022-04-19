@@ -1,90 +1,80 @@
 .location
-  padding-top: 80px
-  @media (max-width: 768px)
+  padding-top: 91px
+  @include tablet
     padding-top: 60px
-  @media (max-width: 600px)
+  @include mobile
     padding-top: 40px
   &__inner
     display: flex
     flex-direction: column
+    align-items: center
   &__top
-    margin-bottom: 70px
+    margin-bottom: 65px
     display: flex
     flex-direction: column
     align-items: center
-    @media (max-width: 768px)
+    @include tablet
       margin-bottom: 50px
-    @media (max-width: 600px)
-      margin-bottom: 30px
   &__title
-    margin-bottom: 20px
-    font-family: Nunito
+    margin-bottom: 11px
+    font-family: Nunito, sans-serif
     font-size: 30px
     font-weight: 400
     color: $black
-    @media (max-width: 1024px)
-      font-size: 26px
-    @media (max-width: 768px)
-      font-size: 22px
-    @media (max-width: 600px)
-      font-size: 18px
+    @include min-mobile
+      font-size: 24px
   &__subtitle
     font-size: 18px
     font-weight: 300
-    letter-spacing: 1px
     line-height: 1.5
     color: $black
-    @media (max-width: 768px)
-      font-size: 14px
-    @media (max-width: 600px)
-      font-size: 12px
+    @include min-mobile
+      max-width: 250px
+      font-size: 16px
+      text-align: center
   &__bottom
+    max-width: 1045px
+    width: 100%
     display: flex
     justify-content: space-between
     flex-wrap: wrap
-    @media (max-width: 600px)
+    @include mobile
       justify-content: space-around
+    @include min-mobile
+      align-items: center
   &__item
-    width: 18%
+    width: 17%
     margin-right: 20px
-    margin-bottom: 50px
+    margin-bottom: 55px
     display: flex
     flex-direction: column
     align-items: start
-    @media (max-width: 768px)
+    @include tablet
       width: 25%
-    @media (max-width: 600px)
-      align-items: center
-      width: 45%
-    @media (max-width: 320px)
+    @include min-mobile
+      margin-bottom: 30px
       margin-right: 0
-      width: 100%
+      width: 51%
   &__name
-    margin-bottom: 10px
+    margin-bottom: 2px
     font-size: 16px
     font-weight: 500
     line-height: 1.5
     color: $black
-    @media (max-width: 768px)
+    @include tablet
       margin-bottom: 5px
-      font-size: 14px
   &__info
-    margin-bottom: 18px
+    margin-bottom: 10px
     display: flex
     flex-direction: column
-    @media (max-width: 768px)
+    @include tablet
       margin-bottom: 10px
   &__text
-    font-size: 18px
+    font-size: 15px
     font-weight: 300
     color: $black
     &:not(:last-child)
-      margin-bottom: 10px
-    @media (max-width: 1024px)
-      font-size: 16px
-    @media (max-width: 768px)
       margin-bottom: 3px
-      font-size: 12px
   &__link
     font-size: 15px
     font-weight: 300
@@ -104,7 +94,5 @@
     &:hover
       &:after
         transform: scaleX(1)
-    @media (max-width: 768px)
-      font-size: 10px
 
 

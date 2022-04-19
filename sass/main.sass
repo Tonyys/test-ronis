@@ -1,41 +1,13 @@
 @import "vars"
-@import "header"
-@import "intro"
-@import "about"
-@import "range"
-@import "why"
-@import "location"
-@import "contact"
-@import "footer"
-@import "form"
+@import "reset"
 
-*
-  margin: 0
-  padding: 0
-  box-sizing: border-box
 
-body
-  font-family: Yantramanav
-  font-weight: 400
-  color: $black
-  @media(max-width: 319px)
-    min-width: 320px
+@import "mixins/index"
 
-a
-  text-decoration: none
+@import "components/index"
 
-section
-  overflow: hidden
 
-img
-  display: block
-  object-fit: cover
 
-.container
-  padding: 0 40px
-  max-width: 1360px
-  width: 100%
-  margin: 0 auto
-  @media (max-width: 600px)
-    padding: 0 20px
+
+
 

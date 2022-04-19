@@ -1,9 +1,9 @@
 .about
-  @media (max-width: 1024px)
+  @include tabletL
     padding-top: 40px
-  @media (max-width: 768px)
+  @include tablet
     padding-top: 80px
-  @media (max-width: 600px)
+  @include mobile
     padding-top: 60px
   &__inner
     display: flex
@@ -14,13 +14,13 @@
     align-items: center
     &:nth-child(even)
       flex-direction: row-reverse
-      @media (max-width: 768px)
+      @include tablet
         flex-direction: column-reverse
-    @media (max-width: 768px)
+    @include tablet
       flex-direction: column-reverse
       &:not(:last-child)
         margin-bottom: 80px
-      @media (max-width: 600px)
+      @include mobile
         &:not(:last-child)
           margin-bottom: 50px
   &__left
@@ -28,22 +28,21 @@
     padding: 28px 30px 30px 30px
     display: flex
     flex-direction: column
+    @include min-mobile
+     padding: 30px 0
   &__title
     margin-bottom: 30px
-    font-family: Nunito
+    font-family: Nunito, sans-serif
     font-size: 30px
     font-weight: 400
     text-align: center
     color: $black
-    @media (max-width: 1280px)
+    @include min-laptop
       font-size: 28px
-    @media (max-width: 1024px)
-      font-size: 26px
-    @media (max-width: 768px)
-      font-size: 22px
-    @media (max-width: 600px)
-      font-size: 18px
-      margin-bottom: 15px
+    @include tabletL
+      font-size: 24px
+    @include min-mobile
+      font-size: 20px
   &__content
     max-width: 364px
     width: 100%
@@ -51,6 +50,8 @@
     flex-direction: column
     align-items: center
     justify-content: space-between
+    @include tablet
+      max-width: 425px
   &__text
     font-size: 16px
     font-weight: 300
@@ -58,12 +59,16 @@
     color: $black
     &:not(:last-child)
       margin-bottom: 24px
-      @media (max-width: 600px)
+      @include mobile
         margin-bottom: 20px
-    @media (max-width: 1280px)
+    @include min-laptop
       font-size: 14px
-    @media (max-width: 600px)
-      font-size: 10px
+    @include tablet
+      font-size: 18px
+    @include mobile
+      font-size: 16px
+    @include min-mobile
+      font-size: 14px
   &__quote
     margin-top: 80px
     max-width: 289px
@@ -78,45 +83,52 @@
     &:before
       content: '“'
       width: 25px
-      font-family: Nunito
       font-size: 72px
       font-weight: 400
       line-height: 1.9
       color: $gray
-      @media (max-width: 1280px)
+      @include min-laptop
         font-size: 68px
-      @media (max-width: 600px)
+      @include mobile
         font-size: 50px
+      @include min-mobile
+        font-size: 34px
     &:after
       position: absolute
       bottom: -100px
       right: -36px
-      @media (max-width: 768px)
+      @include tablet
         bottom: -80px
         right: -30px
-      @media (max-width: 600px)
+      @include mobile
         right: -20px
         bottom: -60px
+      @include min-mobile
+        right: -10px
     &:before
       position: absolute
       top: -75px
       left: -23px
-      @media (max-width: 768px)
+      @include tablet
         top: -50px
         left: -40px
-      @media (max-width: 600px)
+      @include mobile
         top: -30px
         left: -30px
-    @media (max-width: 1280px)
+      @include min-mobile
+        left: -15px
+    @include min-laptop
       font-size: 18px
-    @media (max-width: 1024px)
+    @include tabletL
       margin-top: 50px
       max-width: 230px
       font-size: 16px
-    @media (max-width: 768px)
+    @include tablet
+      max-width: 320px
       margin-top: 22px
-    @media (max-width: 600px)
-      font-size: 12px
+      font-size: 18px
+    @include min-mobile
+      font-size: 14px
   &__person
     margin-top: 105px
     display: block
@@ -125,15 +137,15 @@
     line-height: 1.5
     text-align: center
     color: $black
-    @media (max-width: 768px)
+    @include tablet
       margin-top: 60px
-    @media (max-width: 600px)
-      margin-top: 35px
+    @include min-mobile
+      margin-top: 40px
       font-size: 14px
   &__right
     width: 50%
     height: 100%
-    @media (max-width: 768px)
+    @include tablet
       max-width: 500px
       width: 100%
   &__photo

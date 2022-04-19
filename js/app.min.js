@@ -1,4 +1,4 @@
-// swiper range
+// swiper
 const swiperRange = new Swiper('.range__swiper', {
 	loop: true,
 	centeredSlides: true,
@@ -35,7 +35,7 @@ btnItems.forEach(function (item) {
 			// let itemAttr = currentItem.getAttribute("data-scroll")
 			// let currentSection = document.querySelector(itemAttr)
 
-			if(window.scrollY >= currentSection.offsetTop - 70){
+			if(window.scrollY >= currentSection.offsetTop){
 				btnItems.forEach(function (item){
 					item.classList.remove('active')
 				})
@@ -63,20 +63,6 @@ function scrollTo(element) {
 		behavior: 'smooth'
 	})
 }
-
-// change nav
-
-const intro = document.querySelector('.intro')
-const inrNav = document.querySelector('.intro__nav')
-
-window.addEventListener('scroll',function (){
-	if(window.scrollY >= intro.scrollHeight - 300){
-		inrNav.classList.add('active')
-	} else {
-		inrNav.classList.remove('active')
-	}
-})
-
 
 // validate
 

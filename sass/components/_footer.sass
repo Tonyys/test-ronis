@@ -1,0 +1,65 @@
+.footer
+  padding: 123px 0 116px 0
+  background-color: #f3f3f3
+  @include tablet
+    padding: 80px 0
+  @include mobile
+    padding: 60px 0
+  &_inner
+    display: flex
+    flex-direction: column
+  &__top
+    margin-bottom: 46px
+    display: flex
+    flex-direction: column
+    align-items: center
+    @include min-mobile
+      margin-bottom: 35px
+  &__title
+    margin-bottom: 5px
+    font-family: Nunito, sans-serif
+    font-size: 30px
+    font-weight: 400
+    letter-spacing: .5px
+    color: $black
+    @include min-mobile
+      font-size: 24px
+      text-align: center
+      margin-bottom: 15px
+  &__subtitle
+    font-size: 22px
+    font-weight: 300
+    color: $black
+    @include min-mobile
+      font-size: 16px
+  &__bottom
+    display: flex
+    flex-direction: column
+    align-items: center
+
+//  copyright
+
+.copyright
+  padding: 12px 20px
+  width: 100%
+  background-color: #dcdcdc
+  & .container
+    padding: 0 79px
+    display: flex
+    flex-direction: column
+    align-items: center
+    @include min-mobile
+      padding: 0
+.copyright__text
+  width: 100%
+  font-size: 14px
+  font-weight: 500
+  letter-spacing: .3px
+  color: $white
+  @include tabletL
+    font-size: 12px
+  @include mobile
+    text-align: center
+  @include min-mobile
+    font-size: 10px
+

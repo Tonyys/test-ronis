@@ -1,8 +1,8 @@
 .range
   padding: 78px 0 130px 0
-  @media (max-width: 768px)
+  @include tablet
     padding: 60px 0 100px 0
-  @media (max-width: 600px)
+  @include mobile
     padding: 40px 0 80px 0
   & .container
     padding: 0
@@ -14,30 +14,26 @@
     display: flex
     flex-direction: column
     align-items: center
-    @media (max-width: 768px)
-      margin-bottom: 80px
-    @media (max-width: 600px)
+    @include tablet
+      margin-bottom: 20px
+    @include mobile
       margin-bottom: 25px
   &__title
     margin-bottom: 11px
-    font-family: Nunito
+    font-family: Nunito, sans-serif
     font-size: 30px
     font-weight: 400
     color: $black
-    @media (max-width: 1024px)
-      font-size: 26px
-    @media (max-width: 768px)
-      font-size: 22px
-    @media (max-width: 600px)
-      font-size: 18px
+    @include min-mobile
+      font-size: 24px
   &__subtitle
     font-size: 18px
     font-weight: 300
     color: $black
-    @media (max-width: 768px)
-      font-size: 14px
-    @media (max-width: 600px)
-      font-size: 12px
+    @include min-mobile
+      max-width: 250px
+      text-align: center
+      font-size: 16px
   &__bottom
     display: flex
     position: relative
@@ -51,25 +47,22 @@
     max-width: 470px
     width: 100%
     height: 100%
-    @media (max-width: 768px)
+    @include tablet
       max-width: 350px
-    @media (max-width: 600px)
-      max-width: 190px
+    @include min-mobile
+      max-width: 210px
   &__photo
     width: 100%
     height: 100%
     object-fit: contain
   &__type
-    font-family: Nunito
+    font-family: Nunito, sans-serif
     font-size: 24px
     font-weight: 400
     text-transform: uppercase
     color: $black
-    @media (max-width: 768px)
-      margin-top: 50px
-      font-size: 18px
-    @media (max-width: 600px)
-      font-size: 12px
+    @include min-mobile
+      font-size: 16px
   &__wrapper
     will-change: transform
     transition: cubic-bezier(.47,.58,.55,.92)
@@ -83,22 +76,29 @@
     transition-duration: .4s
     &:hover
       transform: scale(1.1)
-    @media (max-width: 600px)
-      width: 20px
-      height: 20px
+    @include mobile
+      width: 35px
+      height: 35px
+    @include min-mobile
+      width: 27px
+      height: 27px
   &__prev
     left: 18.4%
-    @media (max-width: 1280px)
+    @include min-laptop
       left: 8%
+    @include min-mobile
+      left: 5%
   &__next
     right: 18.5%
     left: auto
     & .range__arrow
       left: calc(50% - 5px)
-      @media (max-width: 600px)
-        left: calc(50% - 3px)
-    @media (max-width: 1280px)
+      @include mobile
+        left: calc(50% - 5px)
+    @include min-laptop
       right: 8%
+    @include min-mobile
+      right: 5%
   &__arrow-round
     width: 100%
     height: 100%
@@ -113,22 +113,22 @@
     justify-content: center
     font-size: 18px
     letter-spacing: 3px
-    @media (max-width: 768px)
+    @include tablet
       bottom: -55px !important
-    @media (max-width: 768px)
-      font-size: 14px
+    @include min-mobile
+      font-size: 16px
   .swiper-pagination-current
     font-size: 18px
     font-weight: 400
     color: $black
-    @media (max-width: 768px)
-      font-size: 14px
+    @include min-mobile
+      font-size: 16px
   .swiper-pagination-total
     font-size: 18px
     font-weight: 400
     color: $black
-    @media (max-width: 768px)
-      font-size: 14px
+    @include min-mobile
+      font-size: 16px
   &__arrow
     border: solid black
     border-width: 0 2px 2px 0
@@ -137,11 +137,11 @@
     position: absolute
     top: calc(50% - 4px)
     left: calc(50% - 4px)
-    @media (max-width: 600px)
-      padding: 2px
+    @include mobile
+      padding: 3px
       border-width: 0px 1px 1px 0
-      top: calc(50% - 3px)
-      left: calc(50% - 2px)
+      top: calc(50% - 4px)
+      left: calc(50% - 3px)
   //  arrows
   .right
     transform: rotate(-45deg)
