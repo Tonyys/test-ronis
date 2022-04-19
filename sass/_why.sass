@@ -1,9 +1,9 @@
 .why
   padding: 70px 0 30px 0
   background-color: #eaeaea
-  @include tablet
+  @include mediaTablet
     padding: 60px 0 40px 0
-  @include mobile
+  @include mediaMobile
     padding: 40px 0
   &__inner
     display: flex
@@ -13,31 +13,30 @@
     flex-direction: column
     align-items: center
   &__title
-    margin-bottom: 11px
-    font-family: Nunito, sans-serif
+    margin-bottom: 15px
+    font-family: $second-font
     font-size: 30px
     font-weight: 400
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 24px
   &__subtitle
     font-size: 18px
     font-weight: 300
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       max-width: 250px
       text-align: center
       font-size: 16px
   &__bottom
-    padding: 0 60px
+    padding: 0 20px
     display: flex
     justify-content: space-between
     position: relative
-    @include tabletL
+    @include mediaTabletL
+      padding: 0
       flex-direction: column-reverse
-    @include tablet
-      padding: 0 40px
-    @include min-mobile
+    @include mediaMin-mobile
       padding: 0
   &__photo-container
     margin: 0 auto
@@ -57,10 +56,7 @@
       left: -10%
       background-color: rgba(250,250,250,.1)
       filter: blur(10px)
-    @media (max-width: 1330px)
-      max-width: 895px
-      left: calc(50% - 404px)
-    @include tabletL
+    @include mediaTabletL
       width: 100%
       height: 100%
       position: relative
@@ -74,46 +70,53 @@
     width: 100%
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     align-items: center
-    @include tabletL
+    @include mediaTabletL
       margin-top: 0
       justify-content: space-around
-    @include tablet
-      justify-content: space-between
-    @include mobile
+    @include mediaTablet
+      justify-content: center
+    @include mediaMobile
       flex-direction: column
       align-items: center
   &__column
     display: flex
     flex-direction: column
+    flex-wrap: wrap
     position: relative
     z-index: 2
+    &:nth-child(2)
+      margin-top: -5px
   &__item
     max-width: 230px
     width: 100%
-    padding: 14px
-    margin-bottom: 7px
+    padding: 13px 11px 14px 14px
+    margin-bottom: 9px
     display: flex
     flex-direction: column
     background-color: #fff
     border-radius: 10px
     position: relative
-    @include mobile
+    @include mediaTabletL
+      margin-right: 20px
+    @include mediaMobile
       margin-bottom: 10px
       max-width: 400px
+    @media (max-width: 670px)
+      max-width: 450px
   &__item-header
-    margin-bottom: 3px
     font-size: 16px
     font-weight: 500
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 14px
   &__item-text
     font-size: 15px
     font-weight: 300
     color: $black
-    line-height: 1.4
-    @include min-mobile
+    line-height: 1.46
+    @include mediaMin-mobile
       font-size: 13px
   //  LINE
   &__line-first
@@ -123,9 +126,6 @@
     width: 83px
     height: 2px
     background-color: #fff
-    @media (max-width: 1330px)
-      width: 75px
-      right: -75px
     @media (max-width: 1279px)
       display: none
   &__line-second
@@ -135,8 +135,6 @@
     top: 0
     right: 0
     background-color: #fff
-    @media (max-width: 1330px)
-      height: 135px
   &__line-round
     width: 25px
     height: 25px
@@ -148,9 +146,6 @@
       width: 98px
       right: -98px
       top: 72%
-      @media (max-width: 1330px)
-        width: 100px
-        right: -100px
     .why__line-second
       width: 0
       height: 0
@@ -159,10 +154,6 @@
       width: 110px
       right: -110px
       top: 27%
-      @media (max-width: 1330px)
-        width: 110px
-        right: -110px
-        top: 15%
     .why__line-second
       width: 0
       height: 0
@@ -171,9 +162,6 @@
       width: 233px
       right: -233px
       top: 54%
-      @media (max-width: 1330px)
-        width: 250px
-        right: -250px
     .why__line-second
       height: 60px
       top: -60px
@@ -185,9 +173,6 @@
       right: auto
       left: -327px
       top: 48%
-      @media (max-width: 1330px)
-        width: 310px
-        left: -310px
     .why__line-second
       height: 106px
       top: 0
@@ -199,9 +184,6 @@
       right: auto
       left: -274px
       top: 40%
-      @media (max-width: 1330px)
-        width: 260px
-        left: -260px
     .why__line-second
       height: 100px
       top: 0
@@ -213,9 +195,6 @@
       right: auto
       left: -97px
       top: 33%
-      @media (max-width: 1330px)
-        width: 80px
-        left: -80px
     .why__line-second
       height: 0
       width: 0
@@ -228,10 +207,6 @@
       right: auto
       left: -182px
       top: 44%
-      @media (max-width: 1330px)
-        width: 170px
-        left: -170px
-        top: 50%
     .why__line-second
       height: 55px
       width: 2px
@@ -245,9 +220,6 @@
       right: auto
       left: -354px
       top: 24%
-      @media (max-width: 1330px)
-        width: 380px
-        left: -380px
     .why__line-second
       height: 0
       width: 0

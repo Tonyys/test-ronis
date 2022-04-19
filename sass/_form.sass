@@ -10,24 +10,24 @@
   will-change: transform
   &:hover
     transform: scale(1.05)
-  @include mobile
+  @include mediaMobile
     max-width: 420px
   &__input-container
     max-width: 340px
     width: 100%
     position: relative
-    @include mobile
+    @include mediaMobile
       max-width: 280px
-    @include min-mobile
+    @include mediaMin-mobile
       width: 200px
-    &.is-invalid
-      .form__cross
-        display: block
-    &.is-valid
-      .form__cross
-        display: none
-      .form__done
-        display: block
+    //&.is-invalid
+    //  .form__cross
+    //    display: block
+    //&.is-valid
+    //  .form__cross
+    //    display: none
+    //  .form__done
+    //    display: block
   &__input
     width: 100%
     padding: 12px 55px 12px 30px
@@ -36,16 +36,22 @@
     border-radius: 22px
     outline: none
     border: none
-    @include mobile
+    @include mediaMobile
       font-size: 16px
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 12px
+  &__label
+    position: absolute
+    font-size: 0
+    opacity: 0
+    top: 0
+    left: 0
   &__btn
     max-width: 165px
     width: 100%
     height: 100%
     padding: 9px 50px 12px 40px
-    font-family: Nunito, sans-serif
+    font-family: $second-font
     font-size: 20px
     font-weight: 400
     text-align: center
@@ -54,20 +60,29 @@
     position: absolute
     right: 0
     top: 0
+    border: none
     border-top-right-radius: 22px
     border-bottom-right-radius: 22px
-    @include mobile
+    @include mediaMobile
       font-size: 16px
-    @include min-mobile
+    @include mediaMin-mobile
       max-width: 90px
       padding: 12px 2px
       font-size: 12px
   &__cross,
   &__done
-    display: none
+    display: block
+    opacity: 0
     width: 14px
     height: 14px
     position: absolute
     top: calc(50% - 7px)
     right: 35px
-
+  &__err
+    opacity: 0
+  &__input:focus
+    background-color: white
+  &__input:valid ~ .form__done
+    opacity: 1
+  &__input:invalid:not(:placeholder-shown) ~ .form__cross
+    opacity: 1

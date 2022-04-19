@@ -1,8 +1,8 @@
 .location
   padding-top: 91px
-  @include tablet
+  @include mediaTablet
     padding-top: 60px
-  @include mobile
+  @include mediaMobile
     padding-top: 40px
   &__inner
     display: flex
@@ -13,22 +13,22 @@
     display: flex
     flex-direction: column
     align-items: center
-    @include tablet
+    @include mediaTablet
       margin-bottom: 50px
   &__title
     margin-bottom: 11px
-    font-family: Nunito, sans-serif
+    font-family: $second-font
     font-size: 30px
     font-weight: 400
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 24px
   &__subtitle
     font-size: 18px
     font-weight: 300
     line-height: 1.5
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       max-width: 250px
       font-size: 16px
       text-align: center
@@ -38,9 +38,9 @@
     display: flex
     justify-content: space-between
     flex-wrap: wrap
-    @include mobile
+    @include mediaMobile
       justify-content: space-around
-    @include min-mobile
+    @include mediaMin-mobile
       align-items: center
   &__item
     width: 17%
@@ -49,25 +49,26 @@
     display: flex
     flex-direction: column
     align-items: start
-    @include tablet
-      width: 25%
-    @include min-mobile
+    @media (max-width: 1023px)
+      width: auto
+    @include mediaTablet
+      width: auto
+    @include mediaMin-mobile
       margin-bottom: 30px
       margin-right: 0
-      width: 51%
   &__name
     margin-bottom: 2px
     font-size: 16px
     font-weight: 500
     line-height: 1.5
     color: $black
-    @include tablet
+    @include mediaTablet
       margin-bottom: 5px
   &__info
     margin-bottom: 10px
     display: flex
     flex-direction: column
-    @include tablet
+    @include mediaTablet
       margin-bottom: 10px
   &__text
     font-size: 15px

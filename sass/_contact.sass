@@ -1,9 +1,9 @@
 .contact
   width: 100%
   padding: 24px 0 80px 0
-  @include tablet
+  @include mediaTablet
     padding: 30px 0 60px 0
-  @include mobile
+  @include mediaMobile
     padding: 20px 0 40px 0
   &__inner
     display: flex
@@ -16,17 +16,17 @@
     align-items: center
   &__title
     margin-bottom: 11px
-    font-family: Nunito, sans-serif
+    font-family: $second-font
     font-size: 30px
     font-weight: 400
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 24px
   &__subtitle
     font-size: 18px
     font-weight: 300
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       max-width: 250px
       font-size: 16px
       text-align: center
@@ -55,11 +55,11 @@
     &:hover
       &:after
         transform: scaleX(1)
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 14px
   &__number
     font-size: 18px
     font-weight: 300
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 14px

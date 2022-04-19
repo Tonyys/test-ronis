@@ -1,8 +1,8 @@
 .range
   padding: 78px 0 130px 0
-  @include tablet
+  @include mediaTablet
     padding: 60px 0 100px 0
-  @include mobile
+  @include mediaMobile
     padding: 40px 0 80px 0
   & .container
     padding: 0
@@ -14,23 +14,23 @@
     display: flex
     flex-direction: column
     align-items: center
-    @include tablet
+    @include mediaTablet
       margin-bottom: 20px
-    @include mobile
+    @include mediaMobile
       margin-bottom: 25px
   &__title
     margin-bottom: 11px
-    font-family: Nunito, sans-serif
+    font-family: $second-font
     font-size: 30px
     font-weight: 400
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 24px
   &__subtitle
     font-size: 18px
     font-weight: 300
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       max-width: 250px
       text-align: center
       font-size: 16px
@@ -47,21 +47,21 @@
     max-width: 470px
     width: 100%
     height: 100%
-    @include tablet
+    @include mediaTablet
       max-width: 350px
-    @include min-mobile
+    @include mediaMin-mobile
       max-width: 210px
   &__photo
     width: 100%
     height: 100%
     object-fit: contain
   &__type
-    font-family: Nunito, sans-serif
+    font-family: $second-font
     font-size: 24px
     font-weight: 400
     text-transform: uppercase
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 16px
   &__wrapper
     will-change: transform
@@ -76,28 +76,24 @@
     transition-duration: .4s
     &:hover
       transform: scale(1.1)
-    @include mobile
+    @include mediaMobile
       width: 35px
       height: 35px
-    @include min-mobile
+    @include mediaMin-mobile
       width: 27px
       height: 27px
   &__prev
-    left: 18.4%
-    @include min-laptop
-      left: 8%
-    @include min-mobile
+    left: 16.4%
+    @include mediaMin-mobile
       left: 5%
   &__next
-    right: 18.5%
+    right: 16.5%
     left: auto
     & .range__arrow
       left: calc(50% - 5px)
-      @include mobile
+      @include mediaMobile
         left: calc(50% - 5px)
-    @include min-laptop
-      right: 8%
-    @include min-mobile
+    @include mediaMin-mobile
       right: 5%
   &__arrow-round
     width: 100%
@@ -108,26 +104,26 @@
     position: relative
   &__pagination
     position: absolute
-    bottom: -45px !important
+    bottom: -51px !important
     display: flex
     justify-content: center
     font-size: 18px
     letter-spacing: 3px
-    @include tablet
+    @include mediaTablet
       bottom: -55px !important
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 16px
   .swiper-pagination-current
     font-size: 18px
     font-weight: 400
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 16px
   .swiper-pagination-total
     font-size: 18px
     font-weight: 400
     color: $black
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 16px
   &__arrow
     border: solid black
@@ -137,7 +133,7 @@
     position: absolute
     top: calc(50% - 4px)
     left: calc(50% - 4px)
-    @include mobile
+    @include mediaMobile
       padding: 3px
       border-width: 0px 1px 1px 0
       top: calc(50% - 4px)

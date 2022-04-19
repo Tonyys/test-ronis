@@ -1,10 +1,10 @@
 .about
-  @include tabletL
-    padding-top: 40px
-  @include tablet
+  @include mediaTablet
     padding-top: 80px
-  @include mobile
+  @include mediaMobile
     padding-top: 60px
+  & .container
+    padding: 0
   &__inner
     display: flex
     flex-direction: column
@@ -14,68 +14,77 @@
     align-items: center
     &:nth-child(even)
       flex-direction: row-reverse
-      @include tablet
+      @include mediaTablet
         flex-direction: column-reverse
-    @include tablet
+    @include mediaTablet
       flex-direction: column-reverse
       &:not(:last-child)
         margin-bottom: 80px
-      @include mobile
+      @include mediaMobile
         &:not(:last-child)
           margin-bottom: 50px
+    &:nth-child(2)
+      .about__left
+        margin-bottom: -10px
+    &:nth-child(3)
+      .about__left
+        .about__quote
+          margin-top: 98px
+          max-width: 296px
   &__left
-    margin: 0 auto
-    padding: 28px 30px 30px 30px
+    margin-top: -2px
+    margin-left: -2px
+    width: 50%
     display: flex
     flex-direction: column
-    @include min-mobile
+    align-items: center
+    @include mediaMin-mobile
      padding: 30px 0
   &__title
     margin-bottom: 30px
-    font-family: Nunito, sans-serif
+    font-family: $second-font
     font-size: 30px
     font-weight: 400
+    letter-spacing: .2px
     text-align: center
     color: $black
-    @include min-laptop
-      font-size: 28px
-    @include tabletL
+    @include mediaTabletL
       font-size: 24px
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 20px
   &__content
-    max-width: 364px
+    max-width: 409px
     width: 100%
     display: flex
     flex-direction: column
     align-items: center
     justify-content: space-between
-    @include tablet
+    @include mediaTablet
       max-width: 425px
   &__text
     font-size: 16px
     font-weight: 300
     line-height: 1.5
+    letter-spacing: .77px
     color: $black
     &:not(:last-child)
       margin-bottom: 24px
-      @include mobile
+      @include mediaMobile
         margin-bottom: 20px
-    @include min-laptop
-      font-size: 14px
-    @include tablet
+    @include mediaTablet
       font-size: 18px
-    @include mobile
+    @include mediaMobile
       font-size: 16px
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 14px
   &__quote
-    margin-top: 80px
-    max-width: 289px
+    margin-top: 86px
+    max-width: 330px
     width: 100%
     font-size: 20px
     font-weight: 300
     line-height: 1.5
+    letter-spacing: .9px
     text-align: center
     color: $black
     position: relative
@@ -87,65 +96,61 @@
       font-weight: 400
       line-height: 1.9
       color: $gray
-      @include min-laptop
-        font-size: 68px
-      @include mobile
+      @include mediaMobile
         font-size: 50px
-      @include min-mobile
+      @include mediaMin-mobile
         font-size: 34px
     &:after
       position: absolute
       bottom: -100px
       right: -36px
-      @include tablet
+      @include mediaTablet
         bottom: -80px
         right: -30px
-      @include mobile
+      @include mediaMobile
         right: -20px
         bottom: -60px
-      @include min-mobile
+      @include mediaMin-mobile
         right: -10px
     &:before
       position: absolute
-      top: -75px
-      left: -23px
-      @include tablet
+      top: -81px
+      left: -5px
+      @include mediaTablet
         top: -50px
         left: -40px
-      @include mobile
+      @include mediaMobile
         top: -30px
         left: -30px
-      @include min-mobile
+      @include mediaMin-mobile
         left: -15px
-    @include min-laptop
-      font-size: 18px
-    @include tabletL
+    @include mediaTabletL
       margin-top: 50px
       max-width: 230px
       font-size: 16px
-    @include tablet
+    @include mediaTablet
       max-width: 320px
       margin-top: 22px
       font-size: 18px
-    @include min-mobile
+    @include mediaMin-mobile
       font-size: 14px
   &__person
-    margin-top: 105px
+    margin-top: 93px
     display: block
     font-size: 18px
     font-weight: 300
     line-height: 1.5
     text-align: center
     color: $black
-    @include tablet
+    @include mediaTablet
       margin-top: 60px
-    @include min-mobile
+    @include mediaMin-mobile
       margin-top: 40px
       font-size: 14px
   &__right
     width: 50%
     height: 100%
-    @include tablet
+    @include mediaTablet
       max-width: 500px
       width: 100%
   &__photo
