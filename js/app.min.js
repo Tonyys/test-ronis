@@ -25,43 +25,35 @@ document.querySelectorAll('.intro__nav-item').forEach( (currentItem) => {
 	const currentSection = document.querySelector(itemAttr)
 
 
-	function throttle (func, ms) { // объявляем функцию throttle
+	function throttle (func, ms) {
+		let locked = false
+		return function() {
+			if (locked) return
 
-		let locked = false // переменная которая отвечает за блокировку вызова функции
+			const context = this
+			const args = arguments
 
-		return function() { // эта функция запускается при каждом событии движения курсора
+			locked = true
 
-			if (locked) return // если заблокировано, то прекращаем выполнение этой функции
-
-			const context = this // запоминаем передаваемую функцию func
-			const args = arguments // запоминаем параметры передаваемой функции func
-
-			locked = true // блокируем вызов функции
-
-			setTimeout(() => { // устанавливаем время ожидания
-
-				func.apply(context, args) // выполняем переданную функцию func
-				locked = false // снимаем блокировку
-
-			}, ms) // подставляем значение параметра ms
-
+			setTimeout(() => {
+				func.apply(context, args)
+				locked = false
+			}, ms)
 		}
 	}
-	window.addEventListener('scroll', throttle(scroll,100))
+	window.addEventListener('scroll', throttle(scrollWindow,100))
 
-	function scroll (){
+	function scrollWindow (){
 		console.log(111)
-		btnItems.forEach((item) => {
-			const windowHeight = window.screen.height * 0.50
-			if(window.scrollY >= currentSection.offsetTop - windowHeight){
-				btnItems.forEach( (item) =>{
-					item.classList.remove('active')
-				})
-				currentItem.classList.add('active')
-			} else {
-				currentItem.classList.remove('active')
-			}
-		})
+		const windowHeight = window.screen.height * 0.50
+		if(window.scrollY >= currentSection.offsetTop - windowHeight){
+			btnItems.forEach( (item) =>{
+				item.classList.remove('active')
+			})
+			currentItem.classList.add('active')
+		} else {
+			currentItem.classList.remove('active')
+		}
 	}
 
 	currentItem.addEventListener('click', (e) => {
