@@ -1,6 +1,6 @@
 .form
   position: relative
-  max-width: 470px
+  max-width: 475px
   width: 100%
   display: flex
   justify-content: space-between
@@ -13,13 +13,8 @@
   @include mediaMobile
     max-width: 420px
   &__input-container
-    max-width: 350px
-    width: 100%
+    width: 76%
     position: relative
-    @include mediaMobile
-      max-width: 280px
-    @include mediaMin-mobile
-      width: 200px
     //&.is-invalid
     //  .form__cross
     //    display: block
@@ -30,7 +25,7 @@
     //    display: block
   &__input
     width: 100%
-    padding: 12px 55px 12px 30px
+    padding: 12px 65px 12px 30px
     font-size: 18px
     letter-spacing: -0.6px
     color: $black
@@ -48,10 +43,8 @@
     top: 0
     left: 0
   &__btn
-    max-width: 165px
-    width: 100%
+    width: 30%
     height: 100%
-    padding: 9px 50px 12px 40px
     font-family: $second-font
     font-size: 20px
     font-weight: 400
@@ -78,7 +71,9 @@
     height: 14px
     position: absolute
     top: calc(50% - 7px)
-    right: 35px
+    right: 45px
+    @include mediaMobile
+      right: 30px
   &__err
     opacity: 0
   &__input:focus

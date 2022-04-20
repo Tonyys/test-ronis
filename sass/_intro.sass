@@ -43,9 +43,6 @@
       margin-right: 0
       top: calc(50% - 70px)
     @include mediaMobile
-      max-width: 10px
-      margin-right: 5px
-    @include mediaMin-mobile
       display: none
   &__nav-item
     width: 8px
@@ -104,6 +101,8 @@
       font-size: 54px
     @include mediaTablet
       font-size: 50px
+    @include mediaMobile
+      font-size: 46px
     @include mediaMin-mobile
       font-size: 40px
   &__subtitle
@@ -117,8 +116,6 @@
     position: relative
     @include mediaTabletL
       font-size: 18px
-    @include mediaTablet
-      font-size: 16px
     @include mediaMobile
       margin-bottom: 30px
     @include mediaMin-mobile
@@ -137,6 +134,3 @@
       @include mediaTablet
         display: none
         top: 0
-  &__form
-    max-width: 475px
-    width: 100%

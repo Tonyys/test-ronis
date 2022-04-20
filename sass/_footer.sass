@@ -23,6 +23,8 @@
     letter-spacing: .5px
     text-align: center
     color: $black
+    @include mediaMobile
+      margin-bottom: 10px
     @include mediaMin-mobile
       font-size: 24px
       text-align: center
@@ -46,6 +48,8 @@
   padding: 12px 38px
   width: 100%
   background-color: #dcdcdc
+  @include mediaMobile
+    padding: 12px 35px
   & .container
     padding: 0
     display: flex
@@ -63,6 +67,5 @@
     font-size: 12px
   @include mediaMobile
     text-align: center
-  @include mediaMin-mobile
     font-size: 10px
 
