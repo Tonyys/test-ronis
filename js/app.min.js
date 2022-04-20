@@ -19,17 +19,42 @@ const swiperRange = new Swiper('.range__swiper', {
 
 // Nav scrollbar
 
-document.querySelectorAll('.intro__nav-item').forEach(function (item) {
-	let btnItems = document.querySelectorAll('.intro__nav-item')
-	let currentItem = item
-	let itemAttr = currentItem.getAttribute("data-scroll")
-	let currentSection = document.querySelector(itemAttr)
+document.querySelectorAll('.intro__nav-item').forEach( (currentItem) => {
+	const btnItems = document.querySelectorAll('.intro__nav-item')
+	const itemAttr = currentItem.getAttribute("data-scroll")
+	const currentSection = document.querySelector(itemAttr)
 
-	window.addEventListener('scroll',function (){
-		btnItems.forEach(function (item){
 
-			if(window.scrollY >= currentSection.offsetTop){
-				btnItems.forEach(function (item){
+	function throttle (func, ms) { // объявляем функцию throttle
+
+		let locked = false // переменная которая отвечает за блокировку вызова функции
+
+		return function() { // эта функция запускается при каждом событии движения курсора
+
+			if (locked) return // если заблокировано, то прекращаем выполнение этой функции
+
+			const context = this // запоминаем передаваемую функцию func
+			const args = arguments // запоминаем параметры передаваемой функции func
+
+			locked = true // блокируем вызов функции
+
+			setTimeout(() => { // устанавливаем время ожидания
+
+				func.apply(context, args) // выполняем переданную функцию func
+				locked = false // снимаем блокировку
+
+			}, ms) // подставляем значение параметра ms
+
+		}
+	}
+	window.addEventListener('scroll', throttle(scroll,100))
+
+	function scroll (){
+		console.log(111)
+		btnItems.forEach((item) => {
+			const windowHeight = window.screen.height * 0.50
+			if(window.scrollY >= currentSection.offsetTop - windowHeight){
+				btnItems.forEach( (item) =>{
 					item.classList.remove('active')
 				})
 				currentItem.classList.add('active')
@@ -37,11 +62,11 @@ document.querySelectorAll('.intro__nav-item').forEach(function (item) {
 				currentItem.classList.remove('active')
 			}
 		})
-	})
+	}
 
-	item.addEventListener('click',function (e) {
+	currentItem.addEventListener('click', (e) => {
 
-		btnItems.forEach(function (item){
+		btnItems.forEach((item) => {
 			item.classList.remove('active')
 		})
 
