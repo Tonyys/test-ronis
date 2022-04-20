@@ -41,10 +41,10 @@ document.querySelectorAll('.intro__nav-item').forEach( (currentItem) => {
 			}, ms)
 		}
 	}
-	window.addEventListener('scroll', throttle(scrollWindow,100))
+	window.addEventListener('scroll', throttle(scroll,200))
 
-	function scrollWindow (){
-		console.log(111)
+	function scroll (){
+		console.log(1111)
 		const windowHeight = window.screen.height * 0.50
 		if(window.scrollY >= currentSection.offsetTop - windowHeight){
 			btnItems.forEach( (item) =>{
@@ -54,10 +54,10 @@ document.querySelectorAll('.intro__nav-item').forEach( (currentItem) => {
 		} else {
 			currentItem.classList.remove('active')
 		}
-	}
+ 	}
 
 	currentItem.addEventListener('click', (e) => {
-
+		
 		btnItems.forEach((item) => {
 			item.classList.remove('active')
 		})
