@@ -6,14 +6,14 @@
   justify-content: space-between
   border-radius: 22px
   transform: scale(1)
-  transition-duration: .5s
+  transition: .4s transform
   will-change: transform
   &:hover
     transform: scale(1.05)
   @include mediaMobile
     max-width: 420px
   &__input-container
-    width: 76%
+    width: 71%
     position: relative
     //&.is-invalid
     //  .form__cross
@@ -25,7 +25,7 @@
     //    display: block
   &__input
     width: 100%
-    padding: 12px 65px 12px 30px
+    padding: 10px 65px 12px 30px
     font-size: 18px
     letter-spacing: -0.6px
     color: $black
@@ -33,7 +33,7 @@
     outline: none
     border: none
     @include mediaMobile
-      font-size: 16px
+      font-size: 12px
     @include mediaMin-mobile
       font-size: 12px
   &__label
@@ -43,7 +43,7 @@
     top: 0
     left: 0
   &__btn
-    width: 30%
+    width: 35%
     height: 100%
     font-family: $second-font
     font-size: 20px
@@ -60,8 +60,6 @@
     @include mediaMobile
       font-size: 16px
     @include mediaMin-mobile
-      max-width: 90px
-      padding: 12px 2px
       font-size: 12px
   &__cross,
   &__done
