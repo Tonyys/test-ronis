@@ -7,7 +7,6 @@ const swiperRange = new Swiper('.range__swiper', {
 		delay: 4000,
 	},
 	speed: 800,
-
 	pagination: {
 		el: '.range__pagination',
 		type: 'fraction'
@@ -20,20 +19,14 @@ const swiperRange = new Swiper('.range__swiper', {
 
 // Nav scrollbar
 
-
-const btnItems = document.querySelectorAll('.intro__nav-item')
-
-
-btnItems.forEach(function (item) {
+document.querySelectorAll('.intro__nav-item').forEach(function (item) {
+	let btnItems = document.querySelectorAll('.intro__nav-item')
 	let currentItem = item
 	let itemAttr = currentItem.getAttribute("data-scroll")
 	let currentSection = document.querySelector(itemAttr)
 
 	window.addEventListener('scroll',function (){
 		btnItems.forEach(function (item){
-			// let currentItem = item
-			// let itemAttr = currentItem.getAttribute("data-scroll")
-			// let currentSection = document.querySelector(itemAttr)
 
 			if(window.scrollY >= currentSection.offsetTop){
 				btnItems.forEach(function (item){

@@ -1,7 +1,7 @@
 .range
-  padding: 78px 0 130px 0
-  @include mediaTablet
-    padding: 60px 0 100px 0
+  padding: 77px 0
+  @include mediaMin-mobile
+    padding: 50px 0
   & .container
     padding: 0
   &__inner
@@ -37,10 +37,23 @@
       text-align: center
       font-size: 16px
   &__bottom
+    margin-top: 14px
     display: flex
     position: relative
   &__swiper
-    overflow: visible
+    height: 540px
+    @include mediaTablet
+      height: 450px
+    @include mediaMobile
+      height: 380px
+    @include mediaMin-mobile
+      height: 230px
+  .swiper-wrapper
+    height: 90%
+    will-change: transform
+    transition: cubic-bezier(.47,.58,.55,.92)
+    @include mediaMin-mobile
+      height: 80%
   &__slides
     display: flex
     flex-direction: column
@@ -67,15 +80,12 @@
     color: $black
     @include mediaMin-mobile
       font-size: 16px
-  &__wrapper
-    will-change: transform
-    transition: cubic-bezier(.47,.58,.55,.92)
   &__prev,
   &__next
     width: 38px
     height: 38px
     position: absolute
-    top: calc(50% - 15px)
+    top: 40.5%
     cursor: pointer
     z-index: 100
     transition-duration: .4s
@@ -89,6 +99,8 @@
       height: 27px
   &__prev
     left: 16.4%
+    @include mediaTabletL
+      left: 10%
     @include mediaMobile
       left: 6%
     @include mediaMin-mobile
@@ -100,6 +112,8 @@
       left: calc(50% - 6px)
       @include mediaMobile
         left: calc(50% - 5px)
+    @include mediaTabletL
+      right: 10%
     @include mediaMobile
       right: 6%
     @include mediaMin-mobile
@@ -113,13 +127,13 @@
     position: relative
   &__pagination
     position: absolute
-    bottom: -51px !important
+    bottom: 4px !important
     display: flex
     justify-content: center
     font-size: 18px
     letter-spacing: 3px
     @include mediaTablet
-      bottom: -55px !important
+      bottom: -2px !important
     @include mediaMin-mobile
       font-size: 16px
   .swiper-pagination-current
