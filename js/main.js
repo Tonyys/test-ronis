@@ -22,7 +22,7 @@ new Swiper('.range__swiper', {
     const windowHeight = window.innerHeight * 0.50
     const btnItems = document.querySelectorAll('.intro__nav-item')
 
-    const currentSectionOffsetTop = btnItems.map(function (currentItem){
+    const currentSectionOffsetTop = [...btnItems].map(function (currentItem){
         const currentAttr = currentItem.getAttribute('data-scroll')
         const currentSection = document.querySelector(currentAttr)
         return currentSection.offsetTop;
@@ -30,12 +30,12 @@ new Swiper('.range__swiper', {
 
     window.addEventListener('scroll', function (){
         const { scrollY } = window;
-        
+
         btnItems.forEach(function (currentItem,index){
-            if(scrollY >= currentSectionOffsetTop[index] - windowHeight){
-                btnItems.forEach( (item) =>{
-                    item.classList.remove('active')
-                })
+            if(scrollY >= currentSectionOffsetTop[index] - windowHeight && scrollY <= currentSectionOffsetTop[index] + windowHeight){
+                if(currentItem.previousElementSibling){
+                currentItem.previousElementSibling.classList.remove('active')
+            }
                 currentItem.classList.add('active')
             } else {
                 currentItem.classList.remove('active')
@@ -58,28 +58,38 @@ new Swiper('.range__swiper', {
     });
 
     // function throttle (func, ms) {
-        //     let locked = false
-        //     return function() {
-        //         if (locked) return
-        //
-        //         const context = this
-        //         const args = arguments
-        //
-        //         locked = true
-        //
-        //         setTimeout(() => {
-        //             func.apply(context, args)
-        //             locked = false
-        //         }, ms)
-        //     }
-        // }
+    //     let locked = false
+    //     return function() {
+    //         if (locked) return
+    //
+    //         const context = this
+    //         const args = arguments
+    //
+    //         locked = true
+    //
+    //         setTimeout(() => {
+    //             func.apply(context, args)
+    //             locked = false
+    //         }, ms)
+    //     }
+    // }
 
 
     function scrollTo(element) {
         window.scroll({
-        left: 0,
-        top: element.offsetTop,
-        behavior: 'smooth'
-     })
+            left: 0,
+            top: element.offsetTop,
+            behavior: 'smooth'
+        })
     }
 })()
+
+//
+// if(scrollY >= currentSectionOffsetTop[index] - windowHeight){
+//     currentItem.classList.add('active')
+//     if(currentItem.previousElementSibling){
+//         currentItem.previousElementSibling.classList.remove('active')
+//     }
+// } else {
+//     currentItem.classList.remove('active')
+// }
