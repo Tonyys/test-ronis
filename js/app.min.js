@@ -33,12 +33,13 @@ new Swiper('.range__swiper', {
 
         btnItems.forEach(function (currentItem,index){
             if(scrollY >= currentSectionOffsetTop[index] - windowHeight && scrollY <= currentSectionOffsetTop[index] + windowHeight){
-                if(currentItem.previousElementSibling){
-                currentItem.previousElementSibling.classList.remove('active')
-            }
+            //     if(currentItem.previousElementSibling){
+            //     currentItem.previousElementSibling.classList.remove('active')
+            // }
+                btnItems.forEach(function (item){
+                    item.classList.remove('active')
+                })
                 currentItem.classList.add('active')
-            } else {
-                currentItem.classList.remove('active')
             }
         })
     });
