@@ -25,25 +25,25 @@ const itemAttr = currentItem.getAttribute("data-scroll")
 const currentSection = document.querySelector(itemAttr)
 
 
-function throttle (func, ms) {
-    let locked = false
-    return function() {
-        if (locked) return
-
-        const context = this
-        const args = arguments
-
-        locked = true
-
-        setTimeout(() => {
-            func.apply(context, args)
-            locked = false
-        }, ms)
-    }
-}
 window.addEventListener('scroll', throttle(scroll,200))
 
-function scroll (){
+    function throttle (func, ms) {
+        let locked = false
+        return function() {
+            if (locked) return
+
+            const context = this
+            const args = arguments
+
+            locked = true
+
+            setTimeout(() => {
+                func.apply(context, args)
+                locked = false
+            }, ms)
+        }
+    }
+    function scroll (){
     console.log(1111)
     const windowHeight = window.screen.height * 0.50
     if(window.scrollY >= currentSection.offsetTop - windowHeight){
