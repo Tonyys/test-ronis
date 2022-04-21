@@ -20,12 +20,12 @@ new Swiper('.range__swiper', {
 // Nav scrollbar
 
 document.querySelectorAll('.intro__nav-item').forEach( (currentItem) => {
-const btnItems = document.querySelectorAll('.intro__nav-item')
-const itemAttr = currentItem.getAttribute("data-scroll")
-const currentSection = document.querySelector(itemAttr)
+    const btnItems = document.querySelectorAll('.intro__nav-item')
+    const itemAttr = currentItem.getAttribute("data-scroll")
+    const currentSection = document.querySelector(itemAttr)
+    const windowHeight = window.screen.height * 0.50
 
-
-window.addEventListener('scroll', throttle(scroll,200))
+    window.addEventListener('scroll', throttle(scroll,200))
 
     function throttle (func, ms) {
         let locked = false
@@ -44,27 +44,26 @@ window.addEventListener('scroll', throttle(scroll,200))
         }
     }
     function scroll (){
-    console.log(1111)
-    const windowHeight = window.screen.height * 0.50
-    if(window.scrollY >= currentSection.offsetTop - windowHeight){
-        btnItems.forEach( (item) =>{
+        console.log(1111)
+        if(window.scrollY >= currentSection.offsetTop - windowHeight){
+            btnItems.forEach( (item) =>{
+                item.classList.remove('active')
+            })
+            currentItem.classList.add('active')
+        } else {
+            currentItem.classList.remove('active')
+        }
+    }
+
+    currentItem.addEventListener('click', (e) => {
+
+        btnItems.forEach((item) => {
             item.classList.remove('active')
         })
+
         currentItem.classList.add('active')
-    } else {
-        currentItem.classList.remove('active')
-    }
-}
-
-currentItem.addEventListener('click', (e) => {
-
-    btnItems.forEach((item) => {
-        item.classList.remove('active')
+        scrollTo(currentSection)
     })
-
-    currentItem.classList.add('active')
-    scrollTo(currentSection)
-})
 })
 function scrollTo(element) {
 window.scroll({
