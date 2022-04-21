@@ -19,19 +19,20 @@ new Swiper('.range__swiper', {
 
 // Nav scrollbar
 (function (){
-    const arrAttr = []
-    const windowHeight = window.screen.height * 0.50
-    const btnItems = document.querySelectorAll('.intro__nav-item[data-scroll]')
-    btnItems.forEach(function (el){
-        arrAttr.push(el)
-    })
-    arrAttr.forEach(function (currentItem){
+    const windowHeight = window.innerHeight * 0.50
+    const btnItems = document.querySelectorAll('.intro__nav-item')
+
+    const currentSectionOffsetTop = btnItems.map(function (currentItem){
         const currentAttr = currentItem.getAttribute('data-scroll')
         const currentSection = document.querySelector(currentAttr)
+        return currentSection.offsetTop;
+    });
 
-        window.addEventListener('scroll', scroll)
-        function scroll (){
-            if(window.scrollY >= currentSection.offsetTop - windowHeight){
+    window.addEventListener('scroll', function (){
+        const { scrollY } = window;
+        
+        btnItems.forEach(function (currentItem,index){
+            if(scrollY >= currentSectionOffsetTop[index] - windowHeight){
                 btnItems.forEach( (item) =>{
                     item.classList.remove('active')
                 })
@@ -39,9 +40,13 @@ new Swiper('.range__swiper', {
             } else {
                 currentItem.classList.remove('active')
             }
-        }
+        })
+    });
 
+    btnItems.forEach(function (currentItem){
         currentItem.addEventListener('click', (e) => {
+            const currentAttr = currentItem.getAttribute('data-scroll')
+            const currentSection = document.querySelector(currentAttr)
 
             btnItems.forEach((item) => {
                 item.classList.remove('active')
@@ -49,8 +54,8 @@ new Swiper('.range__swiper', {
 
             currentItem.classList.add('active')
             scrollTo(currentSection)
-        })
-    })
+        });
+    });
 
     // function throttle (func, ms) {
         //     let locked = false
