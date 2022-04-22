@@ -32,7 +32,7 @@ new Swiper('.range__swiper', {
         const { scrollY } = window;
 
         btnItems.forEach(function (currentItem,index){
-            if(scrollY >= currentSectionOffsetTop[index] - windowHeight && scrollY <= currentSectionOffsetTop[index]+ windowHeight) {
+            if(scrollY >= currentSectionOffsetTop[index] - windowHeight && scrollY <= currentSectionOffsetTop[index] + windowHeight) {
                 currentItem.classList.add('active')
                 if(currentItem.previousElementSibling){
                     currentItem.previousElementSibling.classList.remove('active')
