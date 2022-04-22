@@ -32,14 +32,14 @@ new Swiper('.range__swiper', {
         const { scrollY } = window;
 
         btnItems.forEach(function (currentItem,index){
-            if(scrollY >= currentSectionOffsetTop[index] - windowHeight && scrollY <= currentSectionOffsetTop[index] + windowHeight){
-            //     if(currentItem.previousElementSibling){
-            //     currentItem.previousElementSibling.classList.remove('active')
-            // }
-                btnItems.forEach(function (item){
-                    item.classList.remove('active')
-                })
+            if(scrollY >= currentSectionOffsetTop[index] - windowHeight && scrollY <= currentSectionOffsetTop[index]){
                 currentItem.classList.add('active')
+                if(currentItem.previousElementSibling){
+                    currentItem.previousElementSibling.classList.remove('active')
+                }
+                if(currentItem.nextElementSibling){
+                    currentItem.nextElementSibling.classList.remove('active')
+                }
             }
         })
     });
@@ -84,13 +84,3 @@ new Swiper('.range__swiper', {
         })
     }
 })()
-
-//
-// if(scrollY >= currentSectionOffsetTop[index] - windowHeight){
-//     currentItem.classList.add('active')
-//     if(currentItem.previousElementSibling){
-//         currentItem.previousElementSibling.classList.remove('active')
-//     }
-// } else {
-//     currentItem.classList.remove('active')
-// }
